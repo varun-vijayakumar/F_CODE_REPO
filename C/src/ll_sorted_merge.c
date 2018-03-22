@@ -65,29 +65,35 @@ void move_node (struct node **left, struct node **right) {
 }
 
 void sorted_merge(struct node **sorted, struct node *left, struct node *right) {
-#if 0
+#if 0 /* Solution 1 using recursion */
     if (!left) {
-        return right;
+        *sorted = right;
+        return;
     }
 
     if (!right) {
-        return left;
+        *sorted = left;
+        return;
     }
 
     struct node *result = NULL;
 
     if (left->data <= right->data) {
         result = left;
-        result->next = sorted_merge(left->next, right);
+        sorted_merge(&(result->next),left->next, right);
     } else {
         result = right;
-        result->next = sorted_merge(left, right->next);
+        sorted_merge(&(result->next),left, right->next);
     }
-    return result;
+    *sorted = result;
+    return;
 #endif
+    /* Solution 2 */
+    struct node dummy;
+    struct node *tail = &dummy;
 
-    struct node *tail = (struct node *) malloc (sizeof(struct node));
-    *sorted = tail;
+    dummy.next = NULL;
+
     while (1) {
         if (!left) {
             tail->next = right;
@@ -107,6 +113,7 @@ void sorted_merge(struct node **sorted, struct node *left, struct node *right) {
 
         tail = tail->next;
     }
+    *sorted = dummy.next;
 }
 
 int main () {
@@ -128,8 +135,11 @@ int main () {
 
     struct node *sorted = NULL;
     sorted_merge(&sorted, left, right);
+    left = NULL;
+    right = NULL;
     print(sorted);
     print(left);
     print(right);
+    //TODO : Free the mallocs.
 
 }
