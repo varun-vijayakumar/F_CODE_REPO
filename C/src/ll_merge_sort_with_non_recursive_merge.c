@@ -1,6 +1,7 @@
 /*
  * Sort a linked list using merge_sort algorithm
- * in the ascending order. Given a list {5,4,3,1,2}
+ * in the ascending order without recursive merge.
+ * Given a list {5,4,3,1,2}
  * it should yield {1, 2, 3, 4 , 5}.
  */
 
