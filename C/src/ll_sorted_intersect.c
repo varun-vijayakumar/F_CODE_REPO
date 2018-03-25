@@ -1,8 +1,8 @@
 /*
- * Given two lists, merge their nodes together to make one list,
- * taking nodes alternately between the two lists.
- * So ShuffleMerge() with {1, 2, 3} and {7, 13, 1}
- * should yield {1, 7, 2, 13, 3, 1}.
+ * Given two lists sorted in increasing order, create and return a new list representing the
+ * intersection of the two lists. The new list should be made with its own memory — the
+ * original lists should not be changed. In other words, this should be Push() list building,
+ * not MoveNode(). Ideally, each list should only be traversed once. This problem along
  */
 
 #include <stdio.h>
@@ -45,6 +45,11 @@ void print(struct node *head) {
     printf("\n");
 }
 
+/*
+ * The strategy is to advance up both lists and build the result list as we go. When the
+ * current point in both lists are the same, add a node to the result. Otherwise, advanc * e whichever list is smaller. By exploiting the fact that both lists are sorted,
+ * we only traverse each list once.
+ */
 struct node* sorted_intersect (struct node *left, struct node *right) {
 
     if (!left) {
