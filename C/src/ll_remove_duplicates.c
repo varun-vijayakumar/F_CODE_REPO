@@ -61,7 +61,6 @@ void remove_duplicates(struct node *head) {
 
 int main () {
     struct node *left = NULL;
-    struct node *right = NULL;
 
     build(&left, 3);
     build(&left, 3);
