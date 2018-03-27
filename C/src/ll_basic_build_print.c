@@ -1,8 +1,5 @@
 /*
- * Given two lists, merge their nodes together to make one list,
- * taking nodes alternately between the two lists.
- * So ShuffleMerge() with {1, 2, 3} and {7, 13, 1}
- * should yield {1, 7, 2, 13, 3, 1}.
+ * Build and print linked list.
  */
 
 #include <stdio.h>
