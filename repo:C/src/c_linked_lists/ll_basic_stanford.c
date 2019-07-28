@@ -1,6 +1,4 @@
 //
-//  main.c
-//  hello_world
 //
 //  Created by VARUN VIJAYAKUMAR on 7/6/19.
 //  Copyright © 2019 varun-c. All rights reserved.
