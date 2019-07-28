@@ -1,8 +1,27 @@
-//
-//
-//  Created by VARUN VIJAYAKUMAR on 7/6/19.
-//  Copyright © 2019 varun-c. All rights reserved.
-//
+/*
+ *  build
+ *  push
+ *  pop
+ *  delete_list
+ *  length
+ *  get_Nth
+ *  insert_Nth
+ *  sorted_insert
+ *  insert_sort
+ *  append
+ *  move_node
+ *  shuffle_merge
+ *  front_back_split
+ *  alternate_split
+ *  remove_duplicates
+ *  sorted_merge
+ *  merge_sort
+ *  sorted_intersect
+ *  reverse
+ *
+ *  Created by VARUN VIJAYAKUMAR on 7/6/19.
+ *  Copyright © 2019 varun-c. All rights reserved.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -344,7 +363,7 @@ void remove_duplicates(struct node *head) {
 }
 
 int move_node(struct node **source, struct node **dest) {
-/*
+
     struct node *temp = *source;
     
     if (!temp) {
@@ -355,7 +374,7 @@ int move_node(struct node **source, struct node **dest) {
     *source = temp->next;
     temp->next = *dest;
     *dest = temp;
-*/
+/*
     //move to last.
     struct node *temp = *dest;
     
@@ -374,7 +393,7 @@ int move_node(struct node **source, struct node **dest) {
     temp->next = *source;
     *source = (*source)->next;
     temp->next->next = NULL;
-
+*/
     return 1;
 }
 
@@ -394,29 +413,29 @@ void alternate_split(struct node *head, struct node **left, struct node **right)
 }
 
 void shuffle_merge(struct node **left, struct node **right, struct node **list) {
-    if (!*left) {
-        *list = *right;
-        return;
-    }
 
-    if (!*right) {
-        *list = *left;
-        return;
-    }
+    struct node dummy;
+    dummy.next = NULL;
+ 
+    struct node *tail = &dummy;
 
-    while (*left != NULL && *right != NULL) {
-        move_node(left, list);
-        move_node(right, list);
+    while (1) {
+        if (!*left) {
+            tail->next = *right;
+            break;
+        }
+
+        if (!*right) {
+            tail->next = *left;
+            break;
+        }
+
+        move_node(left, &tail->next);
+        tail = tail->next;
+        move_node(right, &tail->next);
+        tail = tail->next;
     }
-    //TODO : reverse the list or find alternate to move
-    if (*left) {
-        append_lists(list, left);
-        return;
-    }
-    if (*right) {
-        append_lists(list, right);
-        return;
-    }
+    *list = dummy.next;
     return;
 }
 
@@ -580,7 +599,8 @@ void reverse (struct node **source) {
     }
     
     while (current != NULL) {
-        move_to_front(&current, &temp);
+        //move_to_front(&current, &temp);
+        move_node(&current, &temp);
     }
     *source = temp;
 }
@@ -929,4 +949,5 @@ int main(int argc, const char * argv[]) {
     reverse_list_alternate(&copied_list);
     dump_list(copied_list);
 #endif
+
 }
