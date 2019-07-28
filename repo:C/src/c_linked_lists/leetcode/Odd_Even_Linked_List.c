@@ -72,5 +72,30 @@ struct ListNode* oddEvenList(struct ListNode* head){
     return newHead;
 }
 
+//SOLUTION 2 ( 8 ms)
+struct ListNode* oddEvenList(struct ListNode* head){
+
+    if (!head || !head->next) {
+        return;
+    }
+
+    struct ListNode *odd = head;
+    struct ListNode *even = head->next;
+    struct ListNode *right_side = even;
+    while (odd && odd->next != NULL && even != NULL) {
+        odd->next = odd->next->next;
+
+        if (even->next) {
+            even->next = even->next->next;
+        }
+        if (odd->next) {
+            odd = odd->next;
+        }
+        even = even->next;
+    }
+    odd->next = right_side;
+    return head;
+}
+
 
 
