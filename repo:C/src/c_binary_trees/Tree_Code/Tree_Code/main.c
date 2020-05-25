@@ -267,12 +267,12 @@ void mirror(Node *root) {
     if (!root) {
         return;
     }
-
+    
+    mirror(root->left);
+    mirror(root->right);
     Node *temp = root->left;
     root->left = root->right;
     root->right = temp;
-    mirror(root->left);
-    mirror(root->right);
 }
 
 /*
@@ -293,24 +293,58 @@ void doubleTree(Node *root) {
     if (!root) {
         return;
     }
-/*    doubleTree(root->left);
-    doubleTree(root->right);
-    Node *new = newNode(root->data);
-    Node *temp = root->left;
-    root->left = new;
-    new->left = temp;*/
+
     doubleTree(root->left);
     doubleTree(root->right);
     Node *new = newNode(root->data);
     Node *temp = root->left;
     root->left = new;
     new->left = temp;
-    printPreOrder(root);
-    printf("\n");
-
 
 }
 
+bool sameTree(Node *root1, Node *root2) {
+    if (!root1 && !root2) {
+        return true;
+    }
+    
+    if (!root1 || !root2) {
+        return false;
+    }
+    
+    if (root1->data == root2->data) {
+        return (true && sameTree(root1->left, root2->left) && sameTree(root1->right, root2->right));
+    } else {
+        return false;
+    }
+    
+}
+
+int countTrees(int num) {
+    if (num <=1) {
+        return 1;
+    }
+    else {
+        int sum = 0;
+        int left, right , root;
+        for (root = 1; root <= num; root++) {
+            left = countTrees(root-1);
+            right = countTrees(num - root);
+            sum += left * right;
+        }
+        return sum;
+    }
+}
+
+bool isPrime(int num) {
+    int i = 0;
+    for (i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 int main () {
     Node* root = NULL;
     root = build(root, 15);
@@ -320,11 +354,23 @@ int main () {
     root = build(root, 19);
     root = build(root, 6);
     root = build(root, 1);
-/*    root = build(root, 4);
-    root = build(root, 2);
-    root = build(root, 5);
-    root = build(root, 1);
-    root = build(root, 3);*/
+    
+    Node *root1 = NULL;
+    root1 = build(root1, 4);
+    root1 = build(root1, 2);
+    root1 = build(root1, 5);
+    root1 = build(root1, 1);
+    root1 = build(root1, 3);
+    
+    Node* root2 = NULL;
+    root2 = build(root2, 15);
+    root2 = build(root2, 3);
+    root2 = build(root2, 16);
+    root2 = build(root2, 5);
+    root2 = build(root2, 29);
+    root2 = build(root2, 6);
+    root2 = build(root2, 1);
+    
     printf("PreOrder : ");
     printPreOrder(root);
     puts("\n");
@@ -368,14 +414,45 @@ int main () {
     printf("\n");
     mirror(root);
     printPostOrder(root);
-    printf("\n");*/
+    printf("\n");
     printf("Double Tree ");
     printPreOrder(root);
     printf("\n");
     doubleTree(root);
     printPreOrder(root);
+    printf("\n");*/
+    printf("tree 0 : ");
+    printPreOrder(root);
     printf("\n");
+    printf("tree 1 : ");
+    printPreOrder(root1);
+    printf("\n");
+    printf("tree 2 : ");
+    printPreOrder(root2);
+    printf("\n");
+    printf("tree 0 == tree 1 ? : %s \n", sameTree(root, root1) ? "same" : "not_same");
+    printf("tree 0 == tree 2 ? : %s \n", sameTree(root, root2) ? "same" : "not_same");
+    printf("tree 0 == tree 0 ? : %s \n", sameTree(root, root) ? "same" : "not_same");
     
+    /*int num = 0;
+    while (1) {
+        printf("NUM : ");
+        scanf("%d", &num);
+        if (num < 0) {
+            break;
+        }
+        printf("number of trees possible : %d\n", countTrees(num));
+    }*/
+    int num = 0;
+    while (1) {
+        printf("NUM : ");
+        scanf("%d", &num);
+        if (num < 0) {
+            break;
+        }
+        printf("is prime : %s\n", isPrime(num) ? "yes" : "no");
+    };
+
 }
 
 
