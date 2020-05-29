@@ -7,7 +7,10 @@
 #include "common.h"
 
 
-
+typedef enum bool_ {
+    false = 0,
+    true = 1,
+} bool;
 
 int findMinimum(int *a, int size) {
     int start = 0, end = size-1, next, prev, mid;
