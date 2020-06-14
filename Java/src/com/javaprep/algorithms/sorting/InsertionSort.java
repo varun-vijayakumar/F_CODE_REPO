@@ -1,4 +1,4 @@
-package com.javaprep.sorting;
+package com.javaprep.algorithms.sorting;
 
 import utils.CommonUtils;
 /**

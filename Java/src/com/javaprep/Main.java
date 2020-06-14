@@ -1,14 +1,7 @@
 package com.javaprep;
 
-import com.javaprep.arraylist.ArrayListMain;
-import com.javaprep.arraylist.ArrayListProblems;
-import com.javaprep.search.BinarySearch;
-import com.javaprep.sorting.*;
-import com.javaprep.strings.StringsMain;
-import utils.CommonUtils;
-
-import javax.print.DocFlavor;
-import java.util.*;
+import com.javaprep.datastructures.lists.ListMain;
+import com.javaprep.datastructures.stacks.StacksMain;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,6 +32,13 @@ public class Main {
        // StringsMain.palindromeExample();
 
         //StringsMain.strToIntExample();
-        StringsMain.intToStringExample();
+        //StringsMain.intToStringExample();
+
+        //ArraysMain.rotateArrayExample();
+        //ListMain.linkedListBasicExample();
+        //ListMain.javaLinkedListExample();
+
+        //StacksMain.stackBasicExample();
+        StacksMain.javaStackExample();
     }
 }

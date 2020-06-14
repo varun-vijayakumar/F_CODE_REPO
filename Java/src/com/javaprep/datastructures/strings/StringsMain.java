@@ -1,4 +1,4 @@
-package com.javaprep.strings;
+package com.javaprep.datastructures.strings;
 
 import java.util.Scanner;
 

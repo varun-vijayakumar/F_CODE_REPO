@@ -1,13 +1,13 @@
-package com.javaprep.arraylist;
+package com.javaprep.datastructures.arrays;
 
-import com.javaprep.search.BinarySearch;
-import com.javaprep.sorting.*;
+import com.javaprep.algorithms.search.BinarySearch;
+import com.javaprep.algorithms.sorting.*;
 import utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ArrayListMain {
+public class ArraysMain {
     public static void sortingExample() {
         int[] array = {5,4,3,2,1};
         SelectionSort.sort(array);
@@ -76,8 +76,8 @@ public class ArrayListMain {
 
     public static void dutchFlagExample() {
         Scanner in = new Scanner(System.in);
-        ArrayList<Integer> arrayList = new ArrayList();
-        ArrayList<Integer> tempList = new ArrayList();
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        ArrayList<Integer> tempList;
         int index = 0;
             while(true) {
             System.out.print("Enter array : ");
@@ -97,6 +97,17 @@ public class ArrayListMain {
                 }
             }
         }
+    }
+
+    public static void rotateArrayExample() {
+        int[] array = { 1,2,3,4,5};
+        int k;
+        Scanner in = new Scanner(System.in);
+        CommonUtils.printArray(array);
+        System.out.print("Enter rotate index : ");
+        k = in.nextInt();
+        ArraysProblems.rotate(array, k);
+        CommonUtils.printArray(array);
     }
 }
 

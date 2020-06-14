@@ -1,4 +1,4 @@
-package com.javaprep.arraylist;
+package com.javaprep.datastructures.arrays;
 
 import utils.CommonUtils;
 

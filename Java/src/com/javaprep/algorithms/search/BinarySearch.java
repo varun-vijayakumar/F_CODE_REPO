@@ -1,4 +1,4 @@
-package com.javaprep.search;
+package com.javaprep.algorithms.search;
 
 import java.util.ArrayList;
 
