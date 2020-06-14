@@ -7,7 +7,7 @@ public class StackBasic {
 
 
     public StackBasic() {
-
+        this(10);
     }
     public StackBasic(int size) {
         this.data = new int[size];
@@ -71,9 +71,14 @@ public class StackBasic {
 
     public String toString() {
         StringBuffer contents = new StringBuffer();
+        contents.append("STACK => [");
         for(int i = 0; i < this.stackPointer; i++) {
-           contents.append(data[i] + " ");
+           contents.append(data[i]);
+           if(i != this.stackPointer-1) {
+               contents.append(",");
+           }
         }
+        contents.append("]");
         return contents.toString();
     }
 }

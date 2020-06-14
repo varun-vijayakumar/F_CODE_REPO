@@ -2,11 +2,12 @@ package com.javaprep.datastructures.stacks;
 
 import java.util.Stack;
 
-public class StacksMain {
+public class StackMain {
 
     public static void stackBasicExample() {
         StackBasic stackBasic = new StackBasic(10);
         for (int i = 0; i < 7 ; i++) {
+            System.out.println(stackBasic.toString());
             stackBasic.push(i);
             System.out.println("Top :  " + stackBasic.top() + " Size : " + stackBasic.currentSize());
         }
@@ -24,6 +25,7 @@ public class StacksMain {
         System.out.println("Top :  " + stackBasic.top() + " Size : " + stackBasic.currentSize());
 
         for (int i = 0; i < 4 ; i++) {
+            System.out.println(stackBasic.toString());
             if (!stackBasic.isEmpty()) {
                 System.out.println("POPPING Top :  " + stackBasic.top() + " Size : " + stackBasic.currentSize());
                 stackBasic.pop();
@@ -31,12 +33,14 @@ public class StacksMain {
         }
 
         System.out.println("\nSize : " + stackBasic.currentSize());
+        System.out.println(stackBasic.toString());
     }
 
     public static void javaStackExample() {
         Stack<Integer> stack = new Stack<Integer>();
 
         for(int i = 0; i < 5; i++) {
+
             System.out.println(stack.isEmpty());
             System.out.println(" Push : " +  stack.push(i+10));
             System.out.println("> Peek : "+ stack.peek());

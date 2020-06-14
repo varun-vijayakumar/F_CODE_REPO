@@ -1,7 +1,7 @@
 package com.javaprep;
 
-import com.javaprep.datastructures.lists.ListMain;
-import com.javaprep.datastructures.stacks.StacksMain;
+import com.javaprep.datastructures.queue.QueueMain;
+import com.javaprep.datastructures.stacks.StackMain;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,7 +38,11 @@ public class Main {
         //ListMain.linkedListBasicExample();
         //ListMain.javaLinkedListExample();
 
-        //StacksMain.stackBasicExample();
-        StacksMain.javaStackExample();
+        //StackMain.stackBasicExample();
+        //StackMain.javaStackExample();
+
+        //QueueMain.queueBasicExample();
+        QueueMain.javaQueueExample();
+
     }
 }
