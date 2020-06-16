@@ -1,7 +1,11 @@
 package com.javaprep;
 
+import com.javaprep.datastructures.hash.HashBasic;
+import com.javaprep.datastructures.hash.HashMain;
 import com.javaprep.datastructures.queue.QueueMain;
 import com.javaprep.datastructures.stacks.StackMain;
+
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,13 +40,19 @@ public class Main {
 
         //ArraysMain.rotateArrayExample();
         //ListMain.linkedListBasicExample();
-        //ListMain.javaLinkedListExample();
-
+        //ListMain.javaLinkedListExample();®R
         //StackMain.stackBasicExample();
         //StackMain.javaStackExample();
 
         //QueueMain.queueBasicExample();
-        QueueMain.javaQueueExample();
+        //QueueMain.javaQueueExample();
+
+        //HashMain.hashBasicExample();
+        HashMain.javaHashExample();
+
+
 
     }
+
+
 }

@@ -61,6 +61,11 @@ public class QueueMain {
     }
 
     public static void javaQueueExample() {
+        /**
+         * Java provides Queue<E> Interfaces
+         * Various implemenations like LinkedList, SynchronousQueue,
+         * PriorityBlockingQueue etc.
+         */
         Queue<Integer> javaQueue = new LinkedList<Integer>();
 
         System.out.println("-----------------------------");

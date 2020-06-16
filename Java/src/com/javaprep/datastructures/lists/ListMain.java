@@ -69,6 +69,13 @@ public class ListMain {
     }
 
     public static void javaLinkedListExample() {
+        /**
+         * Java provides List<E> interface.
+         * Two implementatins.
+         * Vector<E> - Synchronous (Thread Safe).
+         * ArrayList<E> - Asynchronous (Not Thread Safe).
+         * Here we will use LinkedList which is an implementation of Queue<E> interface.
+         */
         LinkedList<Integer> linkedList = new LinkedList<Integer>();
         for (int i = 0; i < 10; i++) {
             linkedList.add(i, i+300);

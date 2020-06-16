@@ -37,6 +37,11 @@ public class StackMain {
     }
 
     public static void javaStackExample() {
+        /**
+         * Java provides two sets of implementations.
+         * Stack <E> - Uses Vector as underlying implemention.Synchronous.
+         * Dequeue <E> - Various Implementations like ArrayDeque.
+         */
         Stack<Integer> stack = new Stack<Integer>();
 
         for(int i = 0; i < 5; i++) {
