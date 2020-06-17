@@ -9,8 +9,10 @@ public class BinaryTreesMain {
 
         binaryTreeBasic.add(15);
         binaryTreeBasic.add(3);
+        binaryTreeBasic.add(2);
         binaryTreeBasic.add(1);
         binaryTreeBasic.add(5);
+        binaryTreeBasic.add(4);
         binaryTreeBasic.add(6);
         binaryTreeBasic.add(16);
         binaryTreeBasic.add(19);
@@ -28,5 +30,10 @@ public class BinaryTreesMain {
         System.out.println(binaryTreeBasic.inOrderToString());
         System.out.println(binaryTreeBasic.preOrderToString());
         System.out.println(binaryTreeBasic.postOrderToString());
+
+        System.out.println("------------------------");
+        System.out.println("DELETE TEST");
+        //binaryTreeBasic.delete(3);
+        //System.out.println(binaryTreeBasic.inOrderToString());
     }
 }

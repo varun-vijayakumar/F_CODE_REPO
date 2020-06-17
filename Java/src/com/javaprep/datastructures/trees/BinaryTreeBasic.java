@@ -24,7 +24,9 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
         }
     }
 
-
+    public void delete(X item) {
+        remove(this.root, item);
+    }
 
     private void insert(Node parent, Node child) {
         if (child.getData().compareTo(parent.getData()) <= 0) {
@@ -46,8 +48,30 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
         }
     }
 
+    private void remove(Node current, X item) {
+        if (current == null) {
+            return;
+        }
+        if (current.getData().compareTo(item) == 0) {
+            Node nodeToBeDeleted = current;
+            Node parent = current.getParent();
+            insert(parent, nodeToBeDeleted.getLeft());
+            insert(parent, nodeToBeDeleted.getRight());
+            current.setLeft(current.getRight());
+        } else if (current.getRight().getData().compareTo(item) == 0) {
+            Node nodeToBeDeleted = current.getRight();
+            insert(current.getRight().getRight(), nodeToBeDeleted.getLeft());
+            current.setRight(current.getRight().getRight());
+        } else if (current.getLeft().getData().compareTo(item) < 0) {
+            remove(current.getRight(), item);
+        } else {
+            remove(current.getLeft(), item);
+        }
+
+    }
     public boolean contains(X item) {
-        return lookUp(this.root, item);
+        //return lookUp(this.root, item);
+        return getNode(item) != null;
     }
 
     public boolean lookUp(Node current, X item) {
@@ -61,6 +85,20 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
         } else {
             return lookUp(current.getLeft(), item);
         }
+    }
+
+    private Node getNode(X item) {
+        Node currentNode = this.root;
+        while(currentNode != null) {
+            if (currentNode.getData().compareTo(item) == 0) {
+                return currentNode;
+            } else if (currentNode.getData().compareTo(item) < 0) {
+                currentNode = currentNode.getRight();
+            } else {
+                currentNode = currentNode.getLeft();
+            }
+        }
+        return null;
     }
 
     public String inOrderToString() {
