@@ -4,6 +4,7 @@ import com.javaprep.datastructures.hash.HashBasic;
 import com.javaprep.datastructures.hash.HashMain;
 import com.javaprep.datastructures.queue.QueueMain;
 import com.javaprep.datastructures.stacks.StackMain;
+import com.javaprep.datastructures.trees.BinaryTreesMain;
 
 import java.util.HashMap;
 
@@ -48,9 +49,9 @@ public class Main {
         //QueueMain.javaQueueExample();
 
         //HashMain.hashBasicExample();
-        HashMain.javaHashExample();
+        //HashMain.javaHashExample();
 
-
+        BinaryTreesMain.binaryTreeBasicExample();
 
     }
 
