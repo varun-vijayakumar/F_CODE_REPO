@@ -24,8 +24,65 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
         }
     }
 
-    public void delete(X item) {
-        remove(this.root, item);
+    public boolean delete(X item) {
+        boolean deleted = false;
+
+        //return false if tree is empty.
+        if (this.root == null) {
+            return false;
+        }
+
+        //get node to be deleted.
+        Node current = getNode(item);
+
+        //if node found.
+        if (current != null) {
+            if (current.getLeft() == null && current.getRight() == null) {
+                //if this is a leaf node, then just link .
+                unlink(current, null);
+                deleted = true;
+            } else if (current.getLeft() == null && current.getRight() != null) {
+                //if the node doesnt have left child, replace node with it right child
+                unlink(current, current.getRight());
+                deleted = true;
+            } else if (current.getLeft() != null && current.getRight() == null) {
+                //if the node doesnt have right child, replace node with it left child
+                unlink(current, current.getLeft());
+                deleted = true;
+            } else {
+                //if node has both left and right child, then find the right most child on the left
+                // side of this node.
+                Node child = current.getLeft();
+                while (child.getRight() != null && child.getLeft() != null) {
+                    child = child.getRight();
+                }
+
+                Node right = child.getParent().getRight();
+
+                //unlink this child from its parent.
+                child.getParent().setRight(null);
+
+                //move the node' right node to child's right.
+                child.setRight(right);
+
+                //move the node's left node to child's left if it not the child itself;
+                if (current.getLeft().getData().compareTo(child.getData()) != 0) {
+                    child.setLeft(current.getLeft());
+                } else {
+                    child.setLeft(null);
+                }
+
+                //replace node with this child node.
+                unlink(current, child);
+                deleted = true;
+            }
+        }
+
+        if(deleted == true) {
+            this.size--;
+        }
+
+        return deleted;
     }
 
     private void insert(Node parent, Node child) {
@@ -48,26 +105,17 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
         }
     }
 
-    private void remove(Node current, X item) {
-        if (current == null) {
-            return;
-        }
-        if (current.getData().compareTo(item) == 0) {
-            Node nodeToBeDeleted = current;
-            Node parent = current.getParent();
-            insert(parent, nodeToBeDeleted.getLeft());
-            insert(parent, nodeToBeDeleted.getRight());
-            current.setLeft(current.getRight());
-        } else if (current.getRight().getData().compareTo(item) == 0) {
-            Node nodeToBeDeleted = current.getRight();
-            insert(current.getRight().getRight(), nodeToBeDeleted.getLeft());
-            current.setRight(current.getRight().getRight());
-        } else if (current.getLeft().getData().compareTo(item) < 0) {
-            remove(current.getRight(), item);
+    private void unlink(Node predecessor, Node successor) {
+        if (predecessor == this.root) {
+            successor.setRight(predecessor.getRight());
+            successor.setLeft(predecessor.getLeft());
+            this.root = successor;
+        } else if (predecessor.getParent().getRight() == predecessor) {
+            // Check if this node is the right node of its parent.
+            predecessor.getParent().setRight(successor);
         } else {
-            remove(current.getLeft(), item);
+            predecessor.getParent().setLeft(successor);
         }
-
     }
     public boolean contains(X item) {
         //return lookUp(this.root, item);
@@ -88,8 +136,10 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
     }
 
     private Node getNode(X item) {
+        System.out.println("Searching item : " + item);
         Node currentNode = this.root;
         while(currentNode != null) {
+
             if (currentNode.getData().compareTo(item) == 0) {
                 return currentNode;
             } else if (currentNode.getData().compareTo(item) < 0) {

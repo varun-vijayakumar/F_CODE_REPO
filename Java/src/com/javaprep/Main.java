@@ -1,9 +1,12 @@
 package com.javaprep;
 
+import com.javaprep.datastructures.arrays.ArrayListProblems;
+import com.javaprep.datastructures.arrays.ArraysMain;
 import com.javaprep.datastructures.hash.HashBasic;
 import com.javaprep.datastructures.hash.HashMain;
 import com.javaprep.datastructures.queue.QueueMain;
 import com.javaprep.datastructures.stacks.StackMain;
+import com.javaprep.datastructures.strings.StringsMain;
 import com.javaprep.datastructures.trees.BinaryTreesMain;
 
 import java.util.HashMap;
@@ -31,9 +34,10 @@ public class Main {
             System.out.println("Output of " + num + "^"+exp+ "  : "+ CommonUtils.powerOf(num, exp));
         }
 */
-        //ArrayListMain.sortingExample();
-       // ArrayListMain.binarySearchExample();
-       // ArrayListMain.dutchFlagExample();
+        //ArraysMain.sortingExample();
+       // ArraysMain.binarySearchExample();
+       // ArraysMain.dutchFlagExample();
+        //ArraysMain.incrementAribitatryPrecisionIntegerExample();
        // StringsMain.palindromeExample();
 
         //StringsMain.strToIntExample();

@@ -33,7 +33,14 @@ public class BinaryTreesMain {
 
         System.out.println("------------------------");
         System.out.println("DELETE TEST");
-        //binaryTreeBasic.delete(3);
-        //System.out.println(binaryTreeBasic.inOrderToString());
+        int[] items = {15, 0, 1,  5,  19, 16}; //3 , 5 TODO: fix
+        for (int item : items) {
+            System.out.println("Delete  : " + item + " success : " + binaryTreeBasic.delete(item) + " size : " +
+                    binaryTreeBasic.getSize());
+            System.out.println(binaryTreeBasic.inOrderToString());
+            System.out.println(binaryTreeBasic.preOrderToString());
+            System.out.println(binaryTreeBasic.postOrderToString());
+        }
+        System.out.println("------------------------");
     }
 }

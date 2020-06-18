@@ -57,8 +57,45 @@ public class ArrayListProblems {
             //System.out.println(" end  e = " + equal + " s = " + smaller + " l = " + larger + " array = " + arrayList);
             //System.out.println();
         }
+    }
 
+    /**
+     * Take an array of digits , add + 1 to the integer combining the digits and update the
+     * array with result.
+     * [1,2,9] ==> [1,3,0]       (129 + 1)
+     * [9,9,9] ==> [1,0,0,0]     (999 + 1)
+     * @param arrayList
+     */
+    public static void incrementAribitatryPrecisionInteger(ArrayList<Integer> arrayList) {
+        boolean carry = false;
+        int len = arrayList.size();
+        int perDigitSum = arrayList.get(len-1) + 1;
+        if (perDigitSum == 10) {
+            carry = true;
+            arrayList.set(len-1, 0);
+        } else {
+            arrayList.set(len-1, perDigitSum);
+        }
+        if (carry) {
+            for (int i = len-2; i>=0; i--) {
+                if (carry) {
+                    perDigitSum = arrayList.get(i) + 1;
+                    if (perDigitSum == 10) {
+                        carry = true;
+                        arrayList.set(i, 0);
+                    } else {
+                        carry = false;
+                        arrayList.set(i, perDigitSum);
+                    }
+                }
+            }
+        }
 
+        //System.out.print("Arr : " + arrayList + " len : "+ len);
+        if (carry && arrayList.get(0) == 0) {
+            arrayList.set(0, 1);
+            arrayList.add(0);
+        }
     }
 }
 

@@ -17,29 +17,28 @@ public class StringsProblems {
 
     public static double stringToInteger(String s) {
         int size = s.length();
-        int i = 0, j = size-1;
+        int i = 0, j;
         double result = 0;
-        boolean neg = false;
+        boolean negative = false;
 
-        for (i = 0; i < size; i++) {
-            if ( s.charAt(i) == '-') {
-                if (i != 0) {
+        for (j = size-1; j >= 0; j--) {
+            if ( s.charAt(j) == '-') {
+                if (j != 0) {
                     return 0;
                 }
-                neg = true;
-                j--;
-               continue;
+                negative = true;
+                break;
             }
 
-            int c = s.charAt(i)-48;
+            int c = s.charAt(j)-48;
             if (c < 0 || c > 9) {
                 return 0;
             }
-            result = result + (c * CommonUtils.powerOf(10, j));
-            j--;
+            result = result + (c * CommonUtils.powerOf(10, i));
+            i++;
         }
 
-        if (neg) {
+        if (negative) {
             result = 0 - result;
         }
         return result;

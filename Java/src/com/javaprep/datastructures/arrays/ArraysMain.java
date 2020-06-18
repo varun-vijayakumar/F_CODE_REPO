@@ -109,5 +109,26 @@ public class ArraysMain {
         ArraysProblems.rotate(array, k);
         CommonUtils.printArray(array);
     }
+
+    public static void incrementAribitatryPrecisionIntegerExample() {
+        Scanner in = new Scanner(System.in);
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int num = 0;
+        while(true) {
+            System.out.print("Enter digit array : ");
+            while(in.hasNext()) {
+                num = in.nextInt();
+                if (num < 0 || num > 9) {
+                    ArrayListProblems.incrementAribitatryPrecisionInteger(arrayList);
+                    System.out.println("RESULT : " + arrayList);
+                    arrayList.clear();
+                    break;
+                } else {
+                    arrayList.add(num);
+                }
+            }
+        }
+
+    }
 }
 
