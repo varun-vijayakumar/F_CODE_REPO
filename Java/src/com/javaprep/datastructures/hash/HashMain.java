@@ -3,7 +3,7 @@ package com.javaprep.datastructures.hash;
 import java.util.HashMap;
 
 public class HashMain {
-    public static void hashBasicExample() {
+    public static void hashBasicDriver() {
         System.out.println("hashBasicExample");
         HashBasic hash = new HashBasic(6);
         String keys[] = {"key1", "key2", "key3", "key4", "key5", "keys6"};
@@ -57,7 +57,7 @@ public class HashMain {
     }
 
 
-    public static void javaHashExample() {
+    public static void javaHashDriver() {
         System.out.println("javaHashExample");
 
         /**

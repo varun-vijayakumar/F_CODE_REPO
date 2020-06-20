@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArraysMain {
-    public static void sortingExample() {
+    public static void sortingDriver() {
         int[] array = {5,4,3,2,1};
         SelectionSort.sort(array);
         System.out.println("Selection Sort");
@@ -35,7 +35,7 @@ public class ArraysMain {
         CommonUtils.printArray(array5);
     }
 
-    public static void binarySearchExample() {
+    public static void binarySearchDriver() {
         Scanner in = new Scanner(System.in);
         ArrayList<Integer> arrayList = new ArrayList();
         boolean searchReady = false;
@@ -74,7 +74,7 @@ public class ArraysMain {
         }
     }
 
-    public static void dutchFlagExample() {
+    public static void dutchFlagDriver() {
         Scanner in = new Scanner(System.in);
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         ArrayList<Integer> tempList;
@@ -99,7 +99,7 @@ public class ArraysMain {
         }
     }
 
-    public static void rotateArrayExample() {
+    public static void rotateArrayDriver() {
         int[] array = { 1,2,3,4,5};
         int k;
         Scanner in = new Scanner(System.in);
@@ -110,7 +110,7 @@ public class ArraysMain {
         CommonUtils.printArray(array);
     }
 
-    public static void incrementAribitatryPrecisionIntegerExample() {
+    public static void incrementAribitatryPrecisionIntegerDriver() {
         Scanner in = new Scanner(System.in);
         ArrayList<Integer> arrayList = new ArrayList<>();
         int num = 0;

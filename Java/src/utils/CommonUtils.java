@@ -39,4 +39,24 @@ public class CommonUtils {
         }
         return result;
     }
+    /*
+     for(int i = 0; i < 5; ++i) {
+        System.out.println("MAIN i : " + i);
+        for (int j = i + 1; j < 5; ++j) {
+            System.out.print(" i : " + i + " j : " + j);
+        }
+        System.out.println();
+     }
+
+     int num = 0;
+     int exp = 0;
+     Scanner in = new Scanner(System.in);
+     while (true) {
+        System.out.print("Enter number : ");
+        num = in.nextInt();
+        System.out.print("Enter exp : ");
+        exp = in.nextInt();
+        System.out.println("Output of " + num + "^"+exp+ "  : "+ CommonUtils.powerOf(num, exp));
+     }
+    */
 }

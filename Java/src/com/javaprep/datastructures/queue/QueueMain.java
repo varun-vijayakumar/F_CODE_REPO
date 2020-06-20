@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class QueueMain {
-    public static void queueBasicExample() {
+    public static void queueBasicDriver() {
         QueueBasic queueBasic = new QueueBasic(5);
 
         System.out.println("-----------------------------");
@@ -60,7 +60,7 @@ public class QueueMain {
         System.out.println("Enque Complete : " + queueBasic);
     }
 
-    public static void javaQueueExample() {
+    public static void javaQueueDriver() {
         /**
          * Java provides Queue<E> Interfaces
          * Various implemenations like LinkedList, SynchronousQueue,

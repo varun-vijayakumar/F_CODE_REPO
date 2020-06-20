@@ -3,7 +3,7 @@ package com.javaprep.datastructures.lists;
 import java.util.LinkedList;
 
 public class ListMain {
-    public static void linkedListBasicExample() {
+    public static void linkedListBasicDriver() {
         LinkedListBasic linkedList = new LinkedListBasic();
         for (int i = 0; i < 5; i++) {
             linkedList.add(i+10);
@@ -68,7 +68,7 @@ public class ListMain {
 
     }
 
-    public static void javaLinkedListExample() {
+    public static void javaLinkedListDriver() {
         /**
          * Java provides List<E> interface.
          * Two implementatins.
