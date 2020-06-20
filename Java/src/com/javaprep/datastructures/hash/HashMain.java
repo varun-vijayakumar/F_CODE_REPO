@@ -64,7 +64,7 @@ public class HashMain {
          * Java provides Map<K,V> interface.
          * Two implemenations.
          * Hashtable<K,V> - Legacy implementatin, Synchronized like vectors, doesn't allow null.
-         * HashMap<K,V> - Newere implementation, Not Synchronized, allsows null. Most used.
+         * HashMap<K,V> - Newer implementation, Not Synchronized, allsows null. Most used.
          */
         HashMap<String, String> hash = new HashMap<String, String>();
 
