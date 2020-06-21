@@ -7,13 +7,14 @@ package com.javaprep.concurrency;
  * 2. Subclass Thread.
  */
 public class ThreadsMain {
+    //1. Provide a Runnable object
     public static void threadsRunnableDriver() {
         HelloRunnable helloRunnable = new HelloRunnable();
         Thread thread = new Thread(helloRunnable);
         thread.start();
         System.out.println("thread name :  " + thread.getName() + " id : " + thread.getId());
     }
-
+    //2. Subclass Thread.
     public static void threadsThreadDriver() {
         HelloThread helloThread  = new HelloThread();
         helloThread.start();
