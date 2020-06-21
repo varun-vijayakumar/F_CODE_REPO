@@ -1,10 +1,14 @@
 package com.javaprep;
 
+import com.javaprep.concurrency.ThreadsMain;
 import com.javaprep.datastructures.hash.HashMain;
 import com.javaprep.datastructures.lists.ListMain;
 import com.javaprep.datastructures.queue.QueueMain;
 import com.javaprep.datastructures.stacks.StackMain;
+import com.javaprep.datastructures.strings.StringsMain;
 import com.javaprep.datastructures.trees.BinaryTreesMain;
+
+import java.lang.management.ThreadMXBean;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +26,7 @@ public class Main {
         StringsMain.intToStringDriver();
         StringsMain.columnIdDriver();
         StringsMain.replaceAndRemoveDriver();
-        */
+        /*
         /*
         ListMain.linkedListBasicDriver();
         ListMain.javaLinkedListDriver();
@@ -43,8 +47,12 @@ public class Main {
         HashMain.javaHashDriver();
         */
 
+        /*
         BinaryTreesMain.binaryTreeBasicDriver();
+        */
 
+        ThreadsMain.threadsRunnableDriver();
+        ThreadsMain.threadsThreadDriver();
     }
 
 

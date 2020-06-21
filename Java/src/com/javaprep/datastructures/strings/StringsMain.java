@@ -65,6 +65,8 @@ public class StringsMain {
             s = smain.toCharArray();
             System.out.println("final size : " + StringsProblems.replaceAndRemove(s, s.length));
             System.out.println(s);
+            //s[10] = '1';
+            System.out.println(s);
         }
     }
 }

@@ -80,8 +80,15 @@ public class StringsProblems {
         return result;
     }
 
-
+    /**
+     * Given an char array, replace all occurance of 'a' with 'dd' and
+     * remove all occurance of 'bb'
+     * @param s
+     * @param size
+     * @return
+     */
     public static int replaceAndRemove(char[] s, int size) {
+        System.out.println("Array Length start : " + s.length);
         int wIdx = 0, aCount = 0;
         for (int i = 0; i< size; i++) {
              if (s[i] != 'b') {
@@ -105,6 +112,7 @@ public class StringsProblems {
             }
             curIdx--;
         }
+        System.out.println("Array Length end : " + s.length);
         return finalSize;
     }
 }
