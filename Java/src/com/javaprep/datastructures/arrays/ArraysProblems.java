@@ -1,5 +1,8 @@
 package com.javaprep.datastructures.arrays;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ArraysProblems {
 
     public static void reverseArray(int[] nums, int start, int end) {
@@ -66,5 +69,57 @@ public class ArraysProblems {
         reverseArray(nums, 0, k-1);
         reverseArray(nums, k, len-1);
 
+    }
+
+    /**
+     * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+     *
+     * You may assume that each input would have exactly one solution, and you may not use the same element twice.
+     *
+     * Example:
+     *
+     * Given nums = [2, 7, 11, 15], target = 9,
+     *
+     * Because nums[0] + nums[1] = 2 + 7 = 9,
+     * return [0, 1].
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap ();
+        int i = 0;
+        int[] indexes = new int[2];
+        /*
+        // 2 pass method
+
+        for(i = 0; i < nums.length; i++) {
+            map.put(target-nums[i], i);
+        }
+        Integer val = null;
+        for (i = 0; i < nums.length; i++) {
+            //if (map.containsKey(nums[i]) == true) {
+                val = map.get(nums[i]);
+                if (val != null && val != i) {
+                    indexes[0] = i;
+                    indexes[1] = val;
+                    break;
+                }
+            //}
+        }
+        */
+        //One pass
+        Integer val = null;
+        for (i = 0; i < nums.length; i++) {
+            val = map.get(target-nums[i]);
+            if (val != null) {
+               indexes[0] = val;
+               indexes[1] = i;
+               break;
+            }
+            map.put(nums[i], i);
+        }
+        return indexes;
     }
 }

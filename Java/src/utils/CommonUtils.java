@@ -4,10 +4,16 @@ import java.util.ArrayList;
 
 public class CommonUtils {
     public static void printArray(int[] a) {
-        for (int item : a) {
-            System.out.print(item);
+        int i = 0;
+        System.out.print("[");
+        while(i < a.length) {
+            System.out.print(a[i]);
+            i++;
+            if(i != a.length) {
+                System.out.print(",");
+            }
         }
-        System.out.println();
+        System.out.println("]");
     }
     public static void swapArrayElements(int[] a, int idx1, int idx2) {
         int temp = a[idx1];

@@ -128,7 +128,16 @@ public class ArraysMain {
                 }
             }
         }
+    }
 
+    public static void twoSumDriver() {
+
+        int[] nums = {1,2,3,4,5};
+        int[] indexes =  ArraysProblems.twoSum(nums, 10);
+        System.out.print("Array : ");
+        CommonUtils.printArray(nums);
+        System.out.print("Indexes : ");
+        CommonUtils.printArray(indexes);
     }
 }
 

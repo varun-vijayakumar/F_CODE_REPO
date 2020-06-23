@@ -69,4 +69,19 @@ public class StringsMain {
             System.out.println(s);
         }
     }
+
+    public static void atoiDriver() {
+        String s;
+        Scanner in = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter the num string : ");
+            s = in.nextLine();
+            int value = StringsProblems.myAtoi(s);
+            if (value == 0) {
+                System.out.println(s + " is not a valid num string");
+                continue;
+            }
+            System.out.println("Answer : "+ value);
+        }
+    }
 }
