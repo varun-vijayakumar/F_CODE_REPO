@@ -2,7 +2,7 @@ package com.javaprep.datastructures.hash;
 
 import java.util.HashMap;
 
-public class HashMain {
+public class HashDriver {
     public static void hashBasicDriver() {
         System.out.println("hashBasicExample");
         HashBasic hash = new HashBasic(6);
@@ -75,6 +75,7 @@ public class HashMain {
         System.out.println("+++++++++++++++++++++");
         System.out.println("Hash Add tests");
         System.out.println("Hash Size : " + hash.size());
+
         for (int i = 0; i < 5; i++) {
             if (hash.get(keys[i]) == null) {
                 hash.put(keys[i], values[i]);
@@ -126,6 +127,7 @@ public class HashMain {
         hash.replace(keys[4], "REPLACED");
         System.out.println("NEW key : " + keys[4] + " value : " + hash.get(keys[4]));
         System.out.println("+++++++++++++++++++++");
+
 
     }
 }

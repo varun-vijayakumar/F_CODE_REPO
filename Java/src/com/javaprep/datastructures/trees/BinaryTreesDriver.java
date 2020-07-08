@@ -1,6 +1,6 @@
 package com.javaprep.datastructures.trees;
 
-public class BinaryTreesMain {
+public class BinaryTreesDriver {
     public static void binaryTreeBasicDriver() {
         BinaryTreeBasic binaryTreeBasic = new BinaryTreeBasic();
         System.out.println("++++++++ BINARY TREE BASIC TEST +++++++++++++++++");

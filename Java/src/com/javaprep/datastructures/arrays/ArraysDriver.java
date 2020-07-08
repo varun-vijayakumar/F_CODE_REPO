@@ -7,7 +7,7 @@ import utils.CommonUtils;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ArraysMain {
+public class ArraysDriver {
     public static void sortingDriver() {
         int[] array = {5,4,3,2,1};
         SelectionSort.sort(array);

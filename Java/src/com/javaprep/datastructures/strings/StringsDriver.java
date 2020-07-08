@@ -2,7 +2,7 @@ package com.javaprep.datastructures.strings;
 
 import java.util.Scanner;
 
-public class StringsMain {
+public class StringsDriver {
     public static void palindromeDriver() {
         String s;
         Scanner in = new Scanner(System.in);

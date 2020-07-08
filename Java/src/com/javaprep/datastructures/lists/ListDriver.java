@@ -2,7 +2,7 @@ package com.javaprep.datastructures.lists;
 
 import java.util.LinkedList;
 
-public class ListMain {
+public class ListDriver {
     public static void linkedListBasicDriver() {
         LinkedListBasic linkedList = new LinkedListBasic();
         for (int i = 0; i < 5; i++) {

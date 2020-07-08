@@ -2,7 +2,7 @@ package com.javaprep.datastructures.stacks;
 
 import java.util.Stack;
 
-public class StackMain {
+public class StackDriver {
 
     public static void stackBasicExample() {
         StackBasic stackBasic = new StackBasic(10);
