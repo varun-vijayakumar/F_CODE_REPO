@@ -4,7 +4,7 @@ import java.sql.SQLSyntaxErrorException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QueueMain {
+public class QueueDriver {
     public static void queueBasicDriver() {
         QueueBasic queueBasic = new QueueBasic(5);
 

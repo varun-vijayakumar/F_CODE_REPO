@@ -6,7 +6,7 @@ package com.javaprep.concurrency;
  * 1. Provide a Runnable object
  * 2. Subclass Thread.
  */
-public class ThreadsMain {
+public class ThreadsDriver {
     //1. Provide a Runnable object
     public static void threadsRunnableDriver() {
         HelloRunnable helloRunnable = new HelloRunnable();

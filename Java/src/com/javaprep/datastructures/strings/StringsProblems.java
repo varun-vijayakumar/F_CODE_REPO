@@ -2,6 +2,9 @@ package com.javaprep.datastructures.strings;
 
 import utils.CommonUtils;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class StringsProblems {
     public static boolean isPalindrome(String s) {
         int i = 0, j = s.length() - 1;
@@ -224,5 +227,118 @@ public class StringsProblems {
             result = 0 - result;
         }
         return (int)result;
+    }
+    /**
+     * Source :  Leetcode.
+     *
+     * Given a string, find the length of the longest substring without repeating characters.
+     *
+     *      Example 1:
+     *
+     *      Input: "abcabcbb"
+     *      Output: 3
+     *      Explanation: The answer is "abc", with the length of 3.
+     *      Example 2:
+     *
+     *      Input: "bbbbb"
+     *      Output: 1
+     *      Explanation: The answer is "b", with the length of 1.
+     *      Example 3:
+     *
+     *      Input: "pwwkew"
+     *      Output: 3
+     *      Explanation: The answer is "wke", with the length of 3.
+     *      Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+     *      https://leetcode.com/articles/longest-substring-without-repeating-characters/
+     */
+    public static int longestNonRepSubStringLength(String s) {
+        /**
+         * brute force. T = O(N^3), O(min(n,m)).
+         *
+         *
+        int len = s.length();
+        int max = 0;
+        for (int i = 0; i < len; i++) {
+            for (int j = i + 1; j <= len; j++) {
+                if (allUnique(s, i, j)) {
+                    max = Math.max(max, j - i);
+                }
+            }
+        }
+        return max;
+         */
+        /**
+         * Sliding Window.
+         * The naive approach is very straightforward. But it is too slow. So how can we optimize it?
+         *
+         * In the naive approaches, we repeatedly check a substring to see if it has duplicate character.
+         * But it is unnecessary. If a substring s_{ij}sij from index ii to j - 1j−1 is already checked to have no
+         * duplicate characters. We only need to check if s[j]s[j] is already in the substring s_{ij}sij.
+         *
+         * To check if a character is already in the substring, we can scan the substring, which leads to an O(n^2)O(n
+         * 2) algorithm. But we can do better.
+         *
+         * By using HashSet as a sliding window, checking if a character in the current can be done in O(1)O(1).
+         *
+         * A sliding window is an abstract concept commonly used in array/string problems.
+         * A window is a range of elements in the array/string which usually defined by the start and end indices,
+         * i.e. [i, j)[i,j) (left-closed, right-open). A sliding window is a window "slides" its two boundaries to the
+         * certain direction. For example, if we slide [i, j)[i,j) to the right by 11 element,
+         * then it becomes [i+1, j+1)[i+1,j+1) (left-closed, right-open).
+         *
+         * Back to our problem. We use HashSet to store the characters
+         * in current window [i, j)[i,j) (j = ij=i initially). Then we slide the index jj to the right.
+         * If it is not in the HashSet, we slide jj further. Doing so until s[j] is already in the HashSet.
+         * At this point, we found the maximum size of substrings without duplicate characters start with index ii.
+         * If we do this for all ii, we get our answer.
+          */
+
+        int len = s.length();
+        int max = 0, i = 0, j = 0;
+        Set<Character> s1 = new HashSet<>();
+        while(i < len && j < len) {
+            if (!s1.contains(s.charAt(j))) {
+                s1.add(s.charAt(j++));
+                max = Math.max(max, j - i);
+            } else {
+                s1.remove(s.charAt(i++));
+            }
+        }
+        return max;
+    }
+
+    private static boolean allUnique(String s, int start, int end) {
+        Set<Character> set = new HashSet<>();
+        for (int i = start; i < end; i++) {
+            Character ch = s.charAt(i);
+            if (set.contains(ch)) {
+                return false;
+            }
+            set.add(ch);
+        }
+        return true;
+    }
+
+    public static void extractString(String s) {
+        /*
+        System.out.println(s.indexOf('n'));
+        System.out.println(s.indexOf('v'));
+        System.out.println(s.indexOf('t'));
+        System.out.println(s.indexOf("vt"));
+        System.out.println("lastIndex of t : " + s.lastIndexOf('t'));
+        */
+
+
+        System.out.println(s.lastIndexOf('_'));
+        String version;
+        if (s.lastIndexOf('_') != -1) {
+            version = s.substring(s.lastIndexOf('_') + 1, s.indexOf(".vm"));
+        } else {
+            version = null;
+        }
+
+        //s = s.substring(0, s.indexOf(".vm"));
+
+        System.out.println(version);
     }
 }

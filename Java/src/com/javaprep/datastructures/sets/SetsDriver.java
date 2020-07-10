@@ -4,7 +4,12 @@ import javax.print.DocFlavor;
 import java.util.*;
 
 /**
- * The following methods are present in the set interface:
+ * Sets Vs Arrays :
+ * Sets   : unordered, no duplicates allowed, lookup - O(1)
+ * Arrays : ordered, duplicates allowed, lookup - O(n)
+ * https://www.freecodecamp.org/news/learn-your-coding-fundamentals-the-main-differences-between-sets-and-arrays-4a9ed29bfb2f/
+ *
+ * The following methods are present in the Set Interface:
  *
  * METHOD	DESCRIPTION
  * add(element)
