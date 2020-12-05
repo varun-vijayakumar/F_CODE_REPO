@@ -1,6 +1,9 @@
 package com.javaprep;
 
+import com.javaprep.algorithms.dynamicProgramming.DpDriver;
 import com.javaprep.concurrency.ThreadsDriver;
+import com.javaprep.concurrency.udemy.ThreadCreation;
+import com.javaprep.concurrency.udemy.vault.CrackTheVault;
 import com.javaprep.datastructures.strings.StringsDriver;
 
 public class Main {
@@ -27,7 +30,7 @@ public class Main {
         StringsDriver.atoiDriver();
         StringsDriver.uniqueSubStringLengthDriver();
         */
-        StringsDriver.stringExtractDriver();
+        //StringsDriver.stringExtractDriver();
         /*
         ListDriver.linkedListBasicDriver();
         ListDriver.javaLinkedListDriver();
@@ -58,7 +61,16 @@ public class Main {
         */
 
         //SetsDriver.javaSets();
+       // DpDriver.execute();
+        try {
+            ThreadCreation threadCreation = new ThreadCreation();
+            threadCreation.createThreadUsingRunnable();
+            threadCreation.createUsingThread();
+        } catch (Exception e) {
+            System.out.println("exception : "+ e.getClass());
+        }
 
+        new CrackTheVault().start();
 
     }
 

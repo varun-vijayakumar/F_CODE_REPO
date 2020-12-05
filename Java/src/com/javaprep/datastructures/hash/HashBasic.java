@@ -3,6 +3,15 @@ package com.javaprep.datastructures.hash;
 import javax.swing.*;
 import java.util.HashMap;
 
+
+/**
+ * Ideal lookup time - O(n), minimum collision.
+ * Worst Case - O(n), max collision.
+ * Collision - Multiple Keys having the same hash code.
+ * keys mapped to an index of array.
+ * @param <X>
+ * @param <Y>
+ */
 public class HashBasic<X, Y> {
     private HashEntry[] data;
     private int capacity;
