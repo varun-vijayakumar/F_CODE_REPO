@@ -1,6 +1,6 @@
 package com.javaprep.datastructures.lists;
 
-public class LinkedListBasic {
+public class   LinkedListBasic {
     private Node head;
     private Node tail;
     private int  nodeCount;
@@ -186,6 +186,11 @@ public class LinkedListBasic {
         System.out.println();
     }
 
+    public void reversePrint(Node head) {
+        if (head == null) return;
+        reversePrint(head.next);
+        System.out.print(head.data+ " ");
+    }
 
     private class Node {
         private Node next;

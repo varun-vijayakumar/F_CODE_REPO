@@ -139,5 +139,14 @@ public class ArraysDriver {
         System.out.print("Indexes : ");
         CommonUtils.printArray(indexes);
     }
+
+    public static void combDriver() {
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(2);
+        input.add(3);
+        input.add(4);
+        System.out.println(ArrayListProblems.combinations(input).toString());
+    }
 }
 

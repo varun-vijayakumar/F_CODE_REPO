@@ -66,6 +66,10 @@ public class ListDriver {
         linkedList2.removeAt(3);
         System.out.println(linkedList2.toString());
 
+        System.out.println("Printing in Reverse Order");
+        System.out.println(linkedList2.toString());
+        linkedList2.reversePrint(linkedList2.getHead());
+
     }
 
     public static void javaLinkedListDriver() {

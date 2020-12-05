@@ -1,6 +1,7 @@
 package utils;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class CommonUtils {
     public static void printArray(int[] a) {
@@ -65,4 +66,15 @@ public class CommonUtils {
         System.out.println("Output of " + num + "^"+exp+ "  : "+ CommonUtils.powerOf(num, exp));
      }
     */
+    /**
+     * Check if a string matches a regular expression.
+     *
+     * @param text the String to check
+     * @param regex the regular expression
+     * @return true if the text matches the regex pattern
+     */
+    public static boolean matchesRegex(String text, String regex) {
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(text).matches();
+    }
 }

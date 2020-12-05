@@ -42,5 +42,9 @@ public class BinaryTreesDriver {
             System.out.println(binaryTreeBasic.postOrderToString());
         }
         System.out.println("------------------------");
+
+        int look = 30;
+        System.out.println("lookup : " + look + "-> : " +
+                (binaryTreeBasic.lookUp(binaryTreeBasic.getRoot(), look) ? "found" : "not found"));
     }
 }

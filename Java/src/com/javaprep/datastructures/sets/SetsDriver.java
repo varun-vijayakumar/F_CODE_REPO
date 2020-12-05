@@ -194,10 +194,11 @@ public class SetsDriver {
          * inherit descedingIterator.
          */
         TreeSet<String> treeSet1 = new TreeSet<String>();
-        treeSet1.add("ZZ");
-        treeSet1.add("CC");
-        treeSet1.add("AA");
-        treeSet1.add("BB");
+        treeSet1.add("1.0.1");
+        treeSet1.add("1.0.2");
+        treeSet1.add("1.0.3");
+        treeSet1.add("1.0.4");
+        treeSet1.add("1.0.5");
         System.out.println("Tree Set1  : " + treeSet1);
 
         System.out.print("iteration TreeSet descending : " );
@@ -213,5 +214,13 @@ public class SetsDriver {
             System.out.print(treeSetItem.next() + " ");
         }
         System.out.println();
+        System.out.println("smallest in Tree Set : " + ((TreeSet<String>) treeSet1).first());
+        System.out.println("largest in Tree Set : " + ((TreeSet<String>) treeSet1).last());
+
+        System.out.println("--------------");
+        System.out.println("hash set iteration without Iterator");
+        for(String item : hashSetEx) {
+            System.out.println(item);
+        }
     }
 }

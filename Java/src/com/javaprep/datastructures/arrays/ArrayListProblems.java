@@ -1,8 +1,11 @@
 package com.javaprep.datastructures.arrays;
 
+import com.javaprep.datastructures.lists.LinkedListBasic;
 import utils.CommonUtils;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 public class ArrayListProblems {
     /**
@@ -96,6 +99,25 @@ public class ArrayListProblems {
             arrayList.set(0, 1);
             arrayList.add(0);
         }
+    }
+
+    public static HashSet combinations(ArrayList<Integer> input) {
+        HashSet<ArrayList> combList = new HashSet<ArrayList>();
+        ArrayList<Integer> comb;
+        combList.add(input);
+        combList.add(new ArrayList());
+        for (int i = 0; i < input.size(); i++) {
+            comb = new ArrayList<>();
+            comb.add(input.get(i));
+            combList.add(comb);
+            for (int j = i+1; j < input.size(); j++) {
+
+                comb.add(input.get(i));
+                comb.add(input.get(j));
+                combList.add(comb);
+            }
+        }
+        return combList;
     }
 }
 

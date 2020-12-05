@@ -83,6 +83,7 @@ public class HashDriver {
             System.out.println("Hash Size : " + hash.size());
         }
 
+
         System.out.println("HASH READ");
         for(int i = 0; i< 6; i++) {
             System.out.println("key : " + keys[i]+ " value : " + hash.get(keys[i]));
@@ -127,6 +128,8 @@ public class HashDriver {
         hash.replace(keys[4], "REPLACED");
         System.out.println("NEW key : " + keys[4] + " value : " + hash.get(keys[4]));
         System.out.println("+++++++++++++++++++++");
+
+
 
 
     }

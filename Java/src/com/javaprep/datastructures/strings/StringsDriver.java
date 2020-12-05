@@ -99,4 +99,18 @@ public class StringsDriver {
             StringsProblems.extractString(s);
         }
     }
+
+    public static void stringCompareDriver() {
+        String s;
+        Scanner in = new Scanner(System.in);
+        while(true) {
+            System.out.print("Enter the string : ");
+            s= in.nextLine();
+            if (s.equals(-1)) {
+                System.out.println("Exiting");
+                return;
+            }
+            StringsProblems.stringCompare(s);
+        }
+    }
 }

@@ -328,11 +328,12 @@ public class StringsProblems {
         System.out.println("lastIndex of t : " + s.lastIndexOf('t'));
         */
 
-
+        //Extract version
+        /*
         System.out.println(s.lastIndexOf('_'));
         String version;
         if (s.lastIndexOf('_') != -1) {
-            version = s.substring(s.lastIndexOf('_') + 1, s.indexOf(".vm"));
+            version = s.substring(s.lastIndexOf('_') + 1, s.indexOf(".py.base64"));
         } else {
             version = null;
         }
@@ -340,5 +341,45 @@ public class StringsProblems {
         //s = s.substring(0, s.indexOf(".vm"));
 
         System.out.println(version);
+        */
+        //Extract Name
+        String solution;
+        if (s.lastIndexOf("_solcfg_v1.0.0")!= 1) {
+            solution = s.substring(0,s.lastIndexOf("_solcfg_v1.0.0"));
+        } else {
+            solution = null;
+        }
+        System.out.println(solution);
     }
+
+    public static void stringCompare(String s) {
+        if (!CommonUtils.matchesRegex(s, "(0|[1-9][0-9]*).(0|[1-9][0-9]*).(0|[1-9][0-9]*)")) {
+            System.out.println("pattern not correct");
+            return;
+        }
+        String parent = "1.0.5";
+        String parentAppVersion = null;
+        String currentAppVersion = null;
+        int iend = s.indexOf(".");
+        if (iend != -1) {
+            currentAppVersion = s.substring(0, iend);
+        }
+
+        iend = parent.indexOf(".");
+        if (iend != -1) {
+            parentAppVersion = parent.substring(0, iend);
+        }
+
+        System.out.println("currentAppVersion : "+ currentAppVersion+ " parentAppVersion : " + parentAppVersion);
+        if (currentAppVersion != null && parentAppVersion != null) {
+            if (currentAppVersion.compareTo(parentAppVersion) <= 0) {
+                System.out.println("version supported");
+            } else {
+                System.out.println("version not supported");
+            }
+        } else {
+            System.out.println("version not available");
+        }
+    }
+
 }

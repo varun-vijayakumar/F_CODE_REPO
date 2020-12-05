@@ -76,6 +76,7 @@ public class QueueDriver {
             javaQueue.add(i+100);
         }
 
+
         System.out.println("JAVA QUEUE =>  " + javaQueue.toString());
 
         System.out.println("Empty : " + javaQueue.isEmpty());
@@ -115,6 +116,11 @@ public class QueueDriver {
 
         System.out.println("ELEMENT : "+ javaQueue.element()); //kinda like peek, returns Expception.
         System.out.println("POLL : "+ javaQueue.poll());
+
+        System.out.println(javaQueue.toString());
+        javaQueue.remove(javaQueue.peek());
+        System.out.println(javaQueue.toString());
+
 
     }
 }

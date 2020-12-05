@@ -1,6 +1,8 @@
 package com.javaprep.datastructures.trees;
 
 public class BinaryTreeBasic<X extends Comparable<X>> {
+
+
     private Node root;
     private int size;
 
@@ -11,7 +13,9 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
     public int getSize() {
         return size;
     }
-
+    public Node getRoot() {
+        return root;
+    }
     public void add(X item) {
         Node newNode = new Node(item);
 
@@ -126,14 +130,17 @@ public class BinaryTreeBasic<X extends Comparable<X>> {
         if (current == null) {
             return false;
         }
+        /*
         if (current.getData().compareTo(item) == 0) {
             return true;
         } else if (current.getData().compareTo(item) < 0) {
             return lookUp(current.getRight(), item);
         } else {
             return lookUp(current.getLeft(), item);
-        }
+        }*/
+        return (current.getData() == item || lookUp(current.getLeft(), item) || lookUp(current.getRight(), item));
     }
+
 
     private Node getNode(X item) {
         System.out.println("Searching item : " + item);
