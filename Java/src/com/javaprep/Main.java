@@ -1,5 +1,6 @@
 package com.javaprep;
 
+<<<<<<< HEAD
 
 import com.javaprep.algorithms.dynamicProgramming.DpDriver;
 import com.javaprep.concurrency.ThreadsDriver;
@@ -14,11 +15,10 @@ import com.javaprep.datastructures.lists.ListDriver;
 import com.javaprep.datastructures.queue.QueueDriver;
 import com.javaprep.datastructures.sets.SetsDriver;
 
+=======
+import com.javaprep.concurrency.ThreadsDriver;
+>>>>>>> rebasing from work
 import com.javaprep.datastructures.strings.StringsDriver;
-import com.javaprep.datastructures.trees.BinaryTreesDriver;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
  
@@ -31,9 +31,8 @@ public class Main {
         ArraysDriver.dutchFlagDriver();
         ArraysDriver.incrementAribitatryPrecisionIntegerDriver();
         ArraysDriver.rotateArrayDriver();
-        ArraysDriver.twoSumDriver();
+        ArraysMain.twoSumDriver();
         */
-        //ArraysDriver.combDriver();
          
 
         /*
@@ -44,17 +43,19 @@ public class Main {
         StringsDriver.replaceAndRemoveDriver();
         StringsDriver.atoiDriver();
         StringsDriver.uniqueSubStringLengthDriver();
+<<<<<<< HEAD
 
         StringsDriver.stringExtractDriver();
         StringsDriver.stringCompareDriver();
 
+=======
+>>>>>>> rebasing from work
         */
-        //StringsDriver.stringExtractDriver();
+        StringsDriver.stringExtractDriver();
         /*
         ListDriver.linkedListBasicDriver();
         ListDriver.javaLinkedListDriver();
         */
-        //ListDriver.linkedListBasicDriver();
 
         /*
         StackDriver.stackBasicExample();
@@ -65,12 +66,13 @@ public class Main {
         QueueDriver.queueBasicDriver();
         QueueDriver.javaQueueDriver();
         */
-        //QueueDriver.javaQueueDriver();
+
         /*
         HashDriver.hashBasicDriver();
         HashDriver.javaHashDriver();
         */
 
+<<<<<<< HEAD
         //BinaryTreesDriver.binaryTreeBasicDriver();
 
 
@@ -162,30 +164,20 @@ public class Main {
                 if (curMin > curMax) {
                     curMax = curMin;
                 }
+=======
+        /*
+        BinaryTreesDriver.binaryTreeBasicDriver();
+        */
 
-                // next window setting
-                window = x;
+        /*
+        ThreadsDriver.threadsRunnableDriver();
+        ThreadsDriver.threadsThreadDriver();
+        */
+>>>>>>> rebasing from work
 
-                // new curMin is start of next window
-                if (i != (len - 1)) {
-                    curMin =  space.get(i + 1);
-                }
-                /**
-                 * reset index as for [1,2,3] of x = 2,
-                 *      [1,2] is one window, [2,3] is another
-                 *  reset index as for [1,2,3] of x = 2,
-                 *      [1], is one window and so is [2] and [3]
-                 *  need to find minimum of all these windows.
-                 */
-                if (window != 1) {
-                    i--;
-                }
+        //SetsDriver.javaSets();
 
-            } else {
-                window--;
-            }
-        }
-        return curMax;
+
     }
 
 
