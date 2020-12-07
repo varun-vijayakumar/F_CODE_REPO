@@ -1,6 +1,5 @@
 package com.javaprep;
 
-<<<<<<< HEAD
 
 import com.javaprep.algorithms.dynamicProgramming.DpDriver;
 import com.javaprep.concurrency.ThreadsDriver;
@@ -15,10 +14,11 @@ import com.javaprep.datastructures.lists.ListDriver;
 import com.javaprep.datastructures.queue.QueueDriver;
 import com.javaprep.datastructures.sets.SetsDriver;
 
-=======
+
 import com.javaprep.concurrency.ThreadsDriver;
->>>>>>> rebasing from work
 import com.javaprep.datastructures.strings.StringsDriver;
+
+import java.util.List;
 
 public class Main {
  
@@ -43,15 +43,12 @@ public class Main {
         StringsDriver.replaceAndRemoveDriver();
         StringsDriver.atoiDriver();
         StringsDriver.uniqueSubStringLengthDriver();
-<<<<<<< HEAD
 
         StringsDriver.stringExtractDriver();
         StringsDriver.stringCompareDriver();
 
-=======
->>>>>>> rebasing from work
         */
-        StringsDriver.stringExtractDriver();
+        //StringsDriver.stringExtractDriver();
         /*
         ListDriver.linkedListBasicDriver();
         ListDriver.javaLinkedListDriver();
@@ -72,7 +69,7 @@ public class Main {
         HashDriver.javaHashDriver();
         */
 
-<<<<<<< HEAD
+
         //BinaryTreesDriver.binaryTreeBasicDriver();
 
 
@@ -152,7 +149,7 @@ public class Main {
         int curMax = Integer.MIN_VALUE;
         int curMin = Integer.MAX_VALUE;
 
-        for (int i = 0; i < len ; i++) {
+        for (int i = 0; i < len; i++) {
             if (window > 0) {
                 // get the min of current window
                 if (space.get(i) < curMin) {
@@ -164,21 +161,9 @@ public class Main {
                 if (curMin > curMax) {
                     curMax = curMin;
                 }
-=======
-        /*
-        BinaryTreesDriver.binaryTreeBasicDriver();
-        */
 
-        /*
-        ThreadsDriver.threadsRunnableDriver();
-        ThreadsDriver.threadsThreadDriver();
-        */
->>>>>>> rebasing from work
-
-        //SetsDriver.javaSets();
-
-
+            }
+        }
+        return curMax;
     }
-
-
 }
