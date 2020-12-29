@@ -18,7 +18,12 @@ import com.javaprep.datastructures.sets.SetsDriver;
 import com.javaprep.concurrency.ThreadsDriver;
 import com.javaprep.datastructures.strings.StringsDriver;
 
+import java.util.Arrays;
 import java.util.List;
+
+class Result {
+
+}
 
 public class Main {
  
@@ -129,6 +134,7 @@ public class Main {
         ThreadsDriver.threadsThreadDriver();
         */
 
+            /*
         try {
             ThreadCreation threadCreation = new ThreadCreation();
             threadCreation.createThreadUsingRunnable();
@@ -138,9 +144,13 @@ public class Main {
         }
 
         new CrackTheVault().start();
+        */
+
+
+
     }
 
-    public static int segment(int x, List<Integer> space) {
+   /* public static int segment(int x, List<Integer> space) {
         if (space.size() == 0 || space == null) {
             return 0;
         }
@@ -166,4 +176,10 @@ public class Main {
         }
         return curMax;
     }
+    */
+
+
 }
+
+
+
